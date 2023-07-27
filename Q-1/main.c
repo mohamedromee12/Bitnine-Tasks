@@ -47,7 +47,7 @@ int calc(Node* node) {
     } else if (node->type == SUB) {
         return calc(node->right) - calc(node->left);
     } else {
-        return 0; // Handle unsupported operation (optional)
+        return 0; 
     }
 }
 
@@ -62,10 +62,10 @@ int main() {
     int result_sub = calc(sub);
     int result_fibo = calc(fibo);
 
-    printf("add : %d\n", result_add); // Output: add : 16
-    printf("mul : %d\n", result_mul); // Output: mul : 20
-    printf("sub : %d\n", result_sub); // Output: sub : 4
-    printf("fibo : %d\n", result_fibo); // Output: fibo : 2
+    printf("add : %d\n", result_add); 
+    printf("mul : %d\n", result_mul); 
+    printf("sub : %d\n", result_sub); 
+    printf("fibo : %d\n", result_fibo); 
 
     // Free the dynamically allocated memory
     free(add);

@@ -4,22 +4,19 @@
 
 
 
+// Dynamic Programming with Memoization
 int memo[MAX_N + 1]; 
 int F_First(int n) {
     if (n == 0) return 0;
     if (n == 1) return 1;
     if (n == 2) return 2;
-
-    
     if (memo[n] != 0) return memo[n];
-
-
     memo[n] = F_First(n - 3) + F_First(n - 2);
     return memo[n];
 }
 
 
-
+// Basic Recursion
 int F_Second(int n) {
     if (n == 0) return 0;
     if (n == 1) return 1;
@@ -29,7 +26,7 @@ int F_Second(int n) {
 }
 
 
-
+// Iterative Dynamic Programming
 int F_Third(int n) {
     if (n == 0) return 0;
     if (n == 1) return 1;
@@ -48,18 +45,17 @@ int F_Third(int n) {
 }
 
 
-
 int main() {
-    int n = 17;
-    
+    int n;
+
+    printf("Enter a value for n: ");
+    scanf("%d", &n);
 
     int result_1 = F_First(n);
     printf("F(%d) = %d\n", n, result_1);
-    
 
     int result_2 = F_Second(n);
     printf("F(%d) = %d\n", n, result_2);
-    
 
     int result_3 = F_Third(n);
     printf("F(%d) = %d\n", n, result_3);
